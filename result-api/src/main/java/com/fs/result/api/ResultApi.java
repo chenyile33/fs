@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public interface ResultApi {
     String PREFIX = "result";
 
+
     /**
      * 根据requestId查询mongo
      */
