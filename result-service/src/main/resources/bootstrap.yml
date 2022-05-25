@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: result-service
+  cloud:
+    nacos:
+      server-addr: 192.168.182.132:8848
+      password: nacos
+      username: nacos
+      discovery:
+        enabled: true
+        port: 8081
+        ip: 127.0.0.1
