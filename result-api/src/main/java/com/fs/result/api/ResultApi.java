@@ -20,5 +20,12 @@ public interface ResultApi {
     @PostMapping("findDataByRequestId")
     Response findDataByRequestId(@RequestBody QueryCondition queryCondition);
 
+    /**
+     * 根据requestId + tableName查询mongo
+     */
+    @PostMapping("findDataByRequestIdAndTableName")
+    Response findDataByRequestIdAndTableName(@RequestBody QueryCondition queryCondition);
 
+    @PostMapping("findTaskStatus")
+    Response findTaskStatus(@RequestBody QueryCondition queryCondition);
 }

@@ -13,4 +13,6 @@ import java.util.List;
 public interface CommonRepository extends MongoRepository<MongoDataEntity, String> {
 
     List<MongoDataEntity<Object>> findByRequestId(String requestId);
+
+    List<MongoDataEntity<Object>> findByRequestIdAndTableName(String requestId, String tableName);
 }

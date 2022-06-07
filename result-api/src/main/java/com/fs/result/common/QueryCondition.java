@@ -11,5 +11,6 @@ import lombok.Data;
 public class QueryCondition {
     //请求ID
     private String requestId;
-    //...
+    //表名
+    private String tableName;
 }

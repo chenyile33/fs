@@ -22,8 +22,15 @@ public class MongoServiceImpl implements MongoService {
 
     @Override
     public List<MongoDataEntity<Object>> findAllDataByQueryCondition(QueryCondition queryCondition) {
+
         return commonRepository.findByRequestId(queryCondition.getRequestId());
     }
+
+    @Override
+    public List<MongoDataEntity<Object>> findDataByRequestIdAndTableName(String requestId, String tableName) {
+        return commonRepository.findByRequestIdAndTableName(requestId, tableName);
+    }
+
 
     @Override
     public void insertData(Object data, String requestId) {
@@ -31,7 +38,7 @@ public class MongoServiceImpl implements MongoService {
         mongoDataEntity.setData(data);
         mongoDataEntity.setInsertMongoDbTime(new Date());
         mongoDataEntity.setRequestId(requestId);
-        mongoDataEntity.setTableName("nb_app_auth");
+        mongoDataEntity.setTableName("nb_app_email");
         commonRepository.insert(mongoDataEntity);
     }
 

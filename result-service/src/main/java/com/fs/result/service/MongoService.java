@@ -14,6 +14,9 @@ public interface MongoService<T> {
     //根据queryCondition查询mongodb
     List<T> findAllDataByQueryCondition(QueryCondition queryCondition);
 
+    List<T> findDataByRequestIdAndTableName(String requestId, String tableName);
+
     //数据插入mongodb
     void insertData(T data, String requestId);
+
 }

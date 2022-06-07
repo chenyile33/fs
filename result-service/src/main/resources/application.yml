@@ -1,6 +1,29 @@
 server:
   port: 8081
 spring:
+  boot:
+    admin:
+      client:
+        # admin-server地址
+        url: http://1.117.74.241:9090/wallboard
+#        # admin-server security用户名
+        username: test
+#        # admin-server security密码
+        password: test
   data:
     mongodb:
-      uri: mongodb://192.168.182.132:27017/uqbing
+      uri: mongodb://122.112.213.216:27017/uqbing
+  redis:
+    host: 1.117.74.241
+    password: passwd123
+    port: 8081
+    database: 0
+# 开放健康检查接口
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
