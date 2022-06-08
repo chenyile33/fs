@@ -3,6 +3,7 @@ package com.fs.result.service;
 import com.fs.result.common.QueryCondition;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author chenyile
@@ -16,7 +17,7 @@ public interface MongoService<T> {
 
     List<T> findDataByRequestIdAndTableName(String requestId, String tableName);
 
-    //数据插入mongodb
-    void insertData(T data, String requestId);
+    //转义任务查询状态
+    Map<String, Object> getTaskStatus(QueryCondition queryCondition);
 
 }

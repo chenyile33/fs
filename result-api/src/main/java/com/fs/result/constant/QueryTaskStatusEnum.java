@@ -1,8 +1,6 @@
 package com.fs.result.constant;
 
-
-public enum ExecStatusEnum {
-
+public enum QueryTaskStatusEnum {
     WAIT(0, "等待查询"),
 
     START(1, "开始查询"),
@@ -10,11 +8,10 @@ public enum ExecStatusEnum {
     END(2, "结束查询"),
 
     FAIL(-1, "查询异常");
-
     private Integer code;
     private String status;
 
-    ExecStatusEnum(Integer code, String status) {
+    QueryTaskStatusEnum(Integer code, String status) {
         this.code = code;
         this.status = status;
     }
@@ -27,13 +24,13 @@ public enum ExecStatusEnum {
         return status;
     }
 
-    public static ExecStatusEnum value(String value) {
+    public static QueryTaskStatusEnum value(String value) {
         switch (value) {
-            case "1":
+            case "0":
                 return WAIT;
-            case "2":
+            case "1":
                 return START;
-            case "3":
+            case "2":
                 return END;
             default:
                 return FAIL;
